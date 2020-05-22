@@ -33,10 +33,26 @@ class Home extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                Icon(
-                  Icons.settings,
-                  size: 35,
-                  color: Colors.cyan,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    FlatButton(
+                      child: Icon(
+                        Icons.arrow_back,
+                        size: 35,
+                        color: Colors.cyan,
+                      ),
+                      onPressed: () {
+                        Navigator.pushNamed(context, 'intoduction');
+                      },
+                    ),
+                    Icon(
+                      Icons.settings,
+                      size: 35,
+                      color: Colors.cyan,
+                    ),
+                  ],
                 ),
               ],
             ),

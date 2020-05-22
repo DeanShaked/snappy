@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:snappy/main/constants.dart';
 
 class SignUp extends StatelessWidget {
+  String fullName;
+  String email;
+  String password;
   bool _value = false;
   @override
   Widget build(BuildContext context) {
@@ -9,7 +12,17 @@ class SignUp extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: <Widget>[
-            Text('Sign Up'),
+            Row(
+              children: <Widget>[
+                FlatButton(
+                  child: Icon(Icons.arrow_back),
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'intoduction');
+                  },
+                ),
+                Text('Sign Up'),
+              ],
+            ),
             TextFormField(
               decoration: InputDecoration(labelText: 'Full Name'),
             ),
@@ -39,7 +52,9 @@ class SignUp extends StatelessWidget {
             ),
             FlatButton(
               child: Text('Create Your Account'),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, 'home');
+              },
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -47,7 +62,9 @@ class SignUp extends StatelessWidget {
                 Text('Already Have an account ?'),
                 FlatButton(
                   child: Text('Sign In'),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'sign_in');
+                  },
                 ),
               ],
             ),

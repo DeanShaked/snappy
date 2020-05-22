@@ -8,7 +8,17 @@ class SignIn extends StatelessWidget {
       body: SafeArea(
         child: Column(
           children: <Widget>[
-            Text('Sign In'),
+            Row(
+              children: <Widget>[
+                FlatButton(
+                  child: Icon(Icons.arrow_back),
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'intoduction');
+                  },
+                ),
+                Text('Sign In'),
+              ],
+            ),
             TextFormField(
               decoration: InputDecoration(labelText: 'Email'),
             ),
@@ -17,11 +27,25 @@ class SignIn extends StatelessWidget {
             ),
             FlatButton(
               child: Text('Sign In'),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, 'home');
+              },
             ),
             FlatButton(
               child: Text('Forgot Password ?'),
               onPressed: () {},
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text('Not a Memeber ?'),
+                FlatButton(
+                  child: Text('Sign Up'),
+                  onPressed: () {
+                    Navigator.pushNamed(context, 'sign_up');
+                  },
+                ),
+              ],
             ),
           ],
         ),

@@ -73,14 +73,18 @@ class CarouselDemoState extends State<CarouselDemo> {
             ),
             FlatButton(
               child: Text('Sign In'),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, 'sign_in');
+              },
             ),
             SizedBox(
               height: 10,
             ),
             FlatButton(
               child: Text('Sign Up'),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, 'sign_up');
+              },
             ),
           ],
         ),

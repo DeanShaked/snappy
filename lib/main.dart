@@ -10,9 +10,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData.dark(),
-      home: Introduction(),
-    );
+        title: 'Flutter Demo',
+        theme: ThemeData.dark(),
+        initialRoute: 'intoduction',
+        routes: {
+          'intoduction': (context) => Introduction(),
+          'sign_in': (context) => SignIn(),
+          'sign_up': (context) => SignUp(),
+          'home': (context) => HomePage(),
+        });
   }
 }
